@@ -1,25 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from "react";
+import "./App.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import Navbar from "react-bootstrap/Navbar";
+import Container from "react-bootstrap/Container";
+import Add from "./Add";
+import Links from "./Links";
+import VisibleTaskList from "./VisibleTaskList";
 
-function App() {
+const App = (props) => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Navbar bg="secondary" variant="dark">
+        <Navbar.Brand>To Do List</Navbar.Brand>
+      </Navbar>
+      <Container>
+        <Add />
+        <Links />
+        <VisibleTaskList />
+      </Container>
+    </>
   );
-}
+};
 
 export default App;
